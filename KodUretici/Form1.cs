@@ -131,6 +131,8 @@ namespace KodUretici
                 ciktiListe[i] = ciktiListe[i].Replace("@ttip", tekrarListView.Items[0].SubItems[1].Text);
                 for (int x = 1; x < tekrarListView.Items.Count; x++)
                 {
+                    if (x == tekrarListView.Items.Count - 1 && kopyala[y].Substring(kopyala[y].Length - 1) == ",")
+                        kopyala[y] = kopyala[y].Substring(0, kopyala[y].Length - 1);
                     ciktiListe[i] = ciktiListe[i] + kopyala[y];
                     ciktiListe[i] = ciktiListe[i].Replace("@tvar", tekrarListView.Items[x].Text);
                     ciktiListe[i] = ciktiListe[i].Replace("@ttip", tekrarListView.Items[x].SubItems[1].Text);
@@ -495,7 +497,7 @@ namespace KodUretici
 
         private void HakkındaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.1", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
