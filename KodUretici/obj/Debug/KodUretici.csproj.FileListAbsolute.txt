@@ -38,7 +38,6 @@ C:\Users\Armonist\source\repos\KodUretici\KodUretici\bin\Debug\ScintillaNET.xml
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.csprojAssemblyReference.cache
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.Baglan.resources
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.Form1.resources
-C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.jsonURL.resources
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.Properties.Resources.resources
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.csproj.GenerateResource.cache
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.csproj.CoreCompileInputs.cache
@@ -46,3 +45,4 @@ C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.csproj
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.csproj.CopyComplete
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.exe
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.pdb
+C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.urlForm.resources

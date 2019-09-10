@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace KodUretici
 {
@@ -448,7 +449,7 @@ namespace KodUretici
 
         private void JSONToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            jsonURL url = new jsonURL();
+            urlForm url = new urlForm();
             url.ShowDialog();
 
             try
@@ -495,9 +496,69 @@ namespace KodUretici
             }
         }
 
+        private void XmlUrl_Click(object sender, EventArgs e)
+        {
+            urlForm url = new urlForm();
+            url.ShowDialog();
+
+            try
+            {
+                using (WebClient wc = new WebClient())
+                {
+                    var xmlString = wc.DownloadString(Properties.Settings.Default.url);
+                    XDocument doc = XDocument.Parse(xmlString);
+                    xmlIslemleri(doc);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lütfen XML türü döndüren bir url kopyalayın.", "Uyarı!");
+            }
+        }
+
+        private void XmlDosya_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog sec = new OpenFileDialog();
+            //sec.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory + "Şablonlar";
+            sec.Title = "XML Dosyası Seçin...";
+            sec.Filter = "XML Dosyası |*.xml|Tüm Dosyalar|*.*";
+            sec.Multiselect = false;
+            if (sec.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    XDocument doc = XDocument.Load(sec.FileName);
+                    xmlIslemleri(doc);
+                }
+                catch (Exception xx)
+                {
+                    MessageBox.Show("XML dosyası hatalı formatlanmış.\n\n" + xx.Message, "Hata!");
+                }
+
+            }
+        }
+
+        public void xmlIslemleri (XDocument doc)
+        {
+            List<string> keys = new List<string>();
+            XElement element = doc.Elements().FirstOrDefault();
+            while (element.Elements().Count() != 0)
+            {
+                element = element.Elements().FirstOrDefault();
+            }
+            element = element.Parent;
+            degiskenListView.Items.Clear();
+            degiskenListView.Items.Add(new ListViewItem(new string[] { "var1,tip1", element.Name.ToString(), "" }));
+            tekrarListView.Items.Clear();
+            foreach (XElement degisken in element.Elements())
+            {
+                tekrarListView.Items.Add(new ListViewItem(new string[] { degisken.Name.ToString(), "string" }));
+            }
+        }
+
         private void HakkındaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.1", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.2", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -73,11 +73,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="jsonURL.cs">
+    <Compile Include="urlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="jsonURL.Designer.cs">
-      <DependentUpon>jsonURL.cs</DependentUpon>
+    <Compile Include="urlForm.Designer.cs">
+      <DependentUpon>urlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,8 +89,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="jsonURL.resx">
-      <DependentUpon>jsonURL.cs</DependentUpon>
+    <EmbeddedResource Include="urlForm.resx">
+      <DependentUpon>urlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

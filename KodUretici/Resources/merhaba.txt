@@ -34,5 +34,5 @@ public class @var1:IEntity
 // Yorum satirlari hicbir tag'i etkisiz hale getirmez @tr!@tr
 
 
-// Kod Uretici v1.4.1
+// Kod Uretici v1.4.2
 // Anil Canberk DURAN
