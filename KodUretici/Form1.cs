@@ -128,6 +128,8 @@ namespace KodUretici
             {
                 list.Add(ciktiListe[i]);
                 kopyala = list.ToArray();
+                ciktiListe[i] = ciktiListe[i].Replace("@ktvar", tekrarListView.Items[0].Text.ToLower());
+                ciktiListe[i] = ciktiListe[i].Replace("@kttip", tekrarListView.Items[0].SubItems[1].Text.ToLower());
                 ciktiListe[i] = ciktiListe[i].Replace("@tvar", tekrarListView.Items[0].Text);
                 ciktiListe[i] = ciktiListe[i].Replace("@ttip", tekrarListView.Items[0].SubItems[1].Text);
                 for (int x = 1; x < tekrarListView.Items.Count; x++)
@@ -137,6 +139,8 @@ namespace KodUretici
                     ciktiListe[i] = ciktiListe[i] + kopyala[y];
                     ciktiListe[i] = ciktiListe[i].Replace("@tvar", tekrarListView.Items[x].Text);
                     ciktiListe[i] = ciktiListe[i].Replace("@ttip", tekrarListView.Items[x].SubItems[1].Text);
+                    ciktiListe[i] = ciktiListe[i].Replace("@ktvar", tekrarListView.Items[x].Text.ToLower());
+                    ciktiListe[i] = ciktiListe[i].Replace("@kttip", tekrarListView.Items[x].SubItems[1].Text.ToLower());
                 }
                 y++;
             }
@@ -380,8 +384,8 @@ namespace KodUretici
         string tip;
         private void TabloEkleButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 PullData();
                 degiskenListView.Items.Clear();
                 degiskenListView.Items.Add(new ListViewItem(new string[] { "var1,tip1", tabloComboBox.Text, "" }));
@@ -393,9 +397,14 @@ namespace KodUretici
                         tip = "string";
                     else if (tip.Contains("decimal("))
                         tip = "decimal";
-                    tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString(), tip }));
+                    if (item.ItemArray[2].Equals("YES"))
+                        tip += "?";
+                    if (pkTable.Rows.Count > 0 && pkTable.Rows[0].ItemArray[0].Equals(item.ItemArray[0].ToString()))
+                        tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString(), tip, "PK" }));
+                    else
+                        tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString(), tip }));
                 }
-            }
+            /*}
             catch
             {
                 MessageBox.Show("SQL Server ile bağlantı kurulamadı.\nLütfen tekrar bağlanmayı deneyin.");
@@ -404,16 +413,26 @@ namespace KodUretici
                 yazi2.Hide();
                 tabloComboBox.Hide();
                 tabloEkleButton.Hide();
-            }
+            }*/
         }
 
         DataTable dataTable;
+        DataTable pkTable;
         public void PullData()
         {
-            string query;
+            string query,query2;
             dataTable = new DataTable();
+            pkTable = new DataTable();
             if (tabloComboBox.SelectedIndex < ayiriciIndex)
-                query = "SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + tabloComboBox.Text + "' ORDER BY ORDINAL_POSITION";
+            {
+                query = "SELECT COLUMN_NAME,DATA_TYPE,IS_NULLABLE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + tabloComboBox.Text + "' ORDER BY ORDINAL_POSITION";
+                query2 = "SELECT Col.Column_Name from INFORMATION_SCHEMA.TABLE_CONSTRAINTS Tab, INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE Col WHERE Col.Constraint_Name = Tab.Constraint_Name AND Col.Table_Name = Tab.Table_Name AND Constraint_Type = 'PRIMARY KEY' AND Col.Table_Name = '" + tabloComboBox.Text + "'";
+                SqlCommand cmd2 = new SqlCommand(query2, con);
+                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                con.Open();
+                da2.Fill(pkTable);
+                con.Close();
+            }
             else
                 query = "SELECT name, system_type_name FROM sys.dm_exec_describe_first_result_set_for_object ( OBJECT_ID('[" + tabloComboBox.Text + "]'), NULL);";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -558,7 +577,7 @@ namespace KodUretici
 
         private void HakkındaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.2", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.3", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

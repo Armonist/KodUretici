@@ -5,34 +5,27 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace KodUretici
-{	
-    // Sabit degiskenleri @var1, @var2, @tip1 gibi kullanabilirsiniz.
-    // Tekrarli degiskenleri ise @tvar ve @ttip ile kullanilir.
-    @var1 (@tr@ttip @tvar,@tr)
+@var1 (@tr@ttip @tvar,@tr)
+{
 @tr	this.@tvar = @tvar;
 @tr
-    }
 }
 
 
 public class @var1:IEntity
 {   
-    // Kodlari tekrar tag'i icerisine alarak tekrar ettirebilirsiniz.
 @tr    public @ttip @tvar { get; set; }
 @tr
-}   // @tvar ve @ttip sadece tekrar tag'i icerisinde calisir.
-    // @tr@ttip @tvar, @tr@tvar @ttip
+}
 
-<table>
-	<tr>
-@tr		<th>@ttip @tvar</th>
-@tr	</tr>
-</table>
+/* ---- Komutlar ---- */
+@tr, @tr        //Tekrar ettirir
+@var1, @tip1    // Sabit degiskenler
+@tvar, @ttip    //Tekrarli degiskenler
+@ktvar, @kttip  //Tekrarli degiskenlerin kucuk yazilisi
+/* ------------------ */
 
+// MsSql, Json, Xml, Nullable?, PK belirtmesi
 
-// Yorum satirlari hicbir tag'i etkisiz hale getirmez @tr!@tr
-
-
-// Kod Uretici v1.4.2
+// Kod Uretici v1.4.3
 // Anil Canberk DURAN

@@ -80,6 +80,7 @@
             this.sablonComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.yenileButon = new System.Windows.Forms.Button();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -213,7 +214,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "ID";
-            this.columnHeader3.Width = -2;
+            this.columnHeader3.Width = 45;
             // 
             // degiskenTipText
             // 
@@ -291,7 +292,8 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tekrarListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader4});
             this.tekrarListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tekrarListView.HideSelection = false;
             this.tekrarListView.Location = new System.Drawing.Point(9, 102);
@@ -309,7 +311,6 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tip";
-            this.columnHeader2.Width = -1;
             // 
             // tekrarTipText
             // 
@@ -424,7 +425,7 @@
             // bağlanToolStripMenuItem
             // 
             this.bağlanToolStripMenuItem.Name = "bağlanToolStripMenuItem";
-            this.bağlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bağlanToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.bağlanToolStripMenuItem.Text = "MSSQL Bağlantısı...";
             this.bağlanToolStripMenuItem.Click += new System.EventHandler(this.BağlanToolStripMenuItem_Click);
             // 
@@ -432,18 +433,18 @@
             // 
             this.mySQLBaToolStripMenuItem.Enabled = false;
             this.mySQLBaToolStripMenuItem.Name = "mySQLBaToolStripMenuItem";
-            this.mySQLBaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mySQLBaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.mySQLBaToolStripMenuItem.Text = "MySQL Bağlantısı...";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(172, 6);
             // 
             // jSONToolStripMenuItem1
             // 
             this.jSONToolStripMenuItem1.Name = "jSONToolStripMenuItem1";
-            this.jSONToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.jSONToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.jSONToolStripMenuItem1.Text = "JSON";
             this.jSONToolStripMenuItem1.Click += new System.EventHandler(this.JSONToolStripMenuItem1_Click);
             // 
@@ -453,20 +454,20 @@
             this.xmlUrl,
             this.xmlDosya});
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.xMLToolStripMenuItem1.Text = "XML";
             // 
             // xmlUrl
             // 
             this.xmlUrl.Name = "xmlUrl";
-            this.xmlUrl.Size = new System.Drawing.Size(180, 22);
+            this.xmlUrl.Size = new System.Drawing.Size(106, 22);
             this.xmlUrl.Text = "URL";
             this.xmlUrl.Click += new System.EventHandler(this.XmlUrl_Click);
             // 
             // xmlDosya
             // 
             this.xmlDosya.Name = "xmlDosya";
-            this.xmlDosya.Size = new System.Drawing.Size(180, 22);
+            this.xmlDosya.Size = new System.Drawing.Size(106, 22);
             this.xmlDosya.Text = "Dosya";
             this.xmlDosya.Click += new System.EventHandler(this.XmlDosya_Click);
             // 
@@ -577,6 +578,10 @@
             this.yenileButon.UseVisualStyleBackColor = true;
             this.yenileButon.Click += new System.EventHandler(this.YenileButon_Click);
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,6 +677,7 @@
         private System.Windows.Forms.Button yenileButon;
         private System.Windows.Forms.ToolStripMenuItem xmlUrl;
         private System.Windows.Forms.ToolStripMenuItem xmlDosya;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 
