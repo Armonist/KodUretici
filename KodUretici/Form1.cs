@@ -154,6 +154,8 @@ namespace KodUretici
                 id = item.Index + 1;
                 cikti = cikti.Replace("@var" + id.ToString(), item.SubItems[1].Text);
                 cikti = cikti.Replace("@tip" + id.ToString(), item.SubItems[2].Text);
+                cikti = cikti.Replace("@kvar" + id.ToString(), item.SubItems[1].Text.ToLower());
+                cikti = cikti.Replace("@ktip" + id.ToString(), item.SubItems[2].Text.ToLower());
             }
             ciktiTextArea.Text = cikti;
         }
@@ -577,7 +579,7 @@ namespace KodUretici
 
         private void HakkındaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.3", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Kodlayan: Anıl Canberk DURAN\n\tVersiyon: 1.4.4", "Hakkında", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

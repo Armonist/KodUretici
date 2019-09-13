@@ -12,7 +12,7 @@ using System.ComponentModel;
 }
 
 
-public class @var1:IEntity
+public class @var1
 {   
 @tr    public @ttip @tvar { get; set; }
 @tr
@@ -21,11 +21,12 @@ public class @var1:IEntity
 /* ---- Komutlar ---- */
 @tr, @tr        //Tekrar ettirir
 @var1, @tip1    // Sabit degiskenler
+@kvar1, @ktip1  //Sabit degiskenlerin kucuk yazilisi
 @tvar, @ttip    //Tekrarli degiskenler
 @ktvar, @kttip  //Tekrarli degiskenlerin kucuk yazilisi
 /* ------------------ */
 
 // MsSql, Json, Xml, Nullable?, PK belirtmesi
 
-// Kod Uretici v1.4.3
+// Kod Uretici v1.4.4
 // Anil Canberk DURAN
