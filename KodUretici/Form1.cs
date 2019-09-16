@@ -586,27 +586,22 @@ namespace KodUretici
             konsolForm kon = new konsolForm();
             kon.veritabani(dbComboBox.Text);
             kon.ShowDialog();
-            QueryIslemleri();
-        }
 
-        public void QueryIslemleri()
-        {
             if (konsolQuery != "")
             {
                 dataTable = new DataTable();
                 SqlCommand cmd = new SqlCommand(konsolQuery, con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-
+                con.Open();
                 try
                 {
-                    con.Open();
                     da.Fill(dataTable);
-                    con.Close();
                 }
                 catch
                 {
                     MessageBox.Show("Query istenilen biçimde değil", "Hata!");
                 }
+                con.Close();
 
                 da.Dispose();
 
