@@ -50,6 +50,7 @@
             this.tekrarListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tekrarTipText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tekrarIsimText = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@
             this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xmlUrl = new System.Windows.Forms.ToolStripMenuItem();
             this.xmlDosya = new System.Windows.Forms.ToolStripMenuItem();
+            this.konsolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yazi1 = new System.Windows.Forms.Label();
@@ -80,7 +82,6 @@
             this.sablonComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.yenileButon = new System.Windows.Forms.Button();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -312,6 +313,10 @@
             // 
             this.columnHeader2.Text = "Tip";
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            // 
             // tekrarTipText
             // 
             this.tekrarTipText.Location = new System.Drawing.Point(95, 47);
@@ -417,7 +422,8 @@
             this.mySQLBaToolStripMenuItem,
             this.toolStripSeparator3,
             this.jSONToolStripMenuItem1,
-            this.xMLToolStripMenuItem1});
+            this.xMLToolStripMenuItem1,
+            this.konsolToolStripMenuItem});
             this.sQLBağlantısıToolStripMenuItem.Name = "sQLBağlantısıToolStripMenuItem";
             this.sQLBağlantısıToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.sQLBağlantısıToolStripMenuItem.Text = "Bağlantı";
@@ -425,7 +431,7 @@
             // bağlanToolStripMenuItem
             // 
             this.bağlanToolStripMenuItem.Name = "bağlanToolStripMenuItem";
-            this.bağlanToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.bağlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bağlanToolStripMenuItem.Text = "MSSQL Bağlantısı...";
             this.bağlanToolStripMenuItem.Click += new System.EventHandler(this.BağlanToolStripMenuItem_Click);
             // 
@@ -433,18 +439,18 @@
             // 
             this.mySQLBaToolStripMenuItem.Enabled = false;
             this.mySQLBaToolStripMenuItem.Name = "mySQLBaToolStripMenuItem";
-            this.mySQLBaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.mySQLBaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mySQLBaToolStripMenuItem.Text = "MySQL Bağlantısı...";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(172, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // jSONToolStripMenuItem1
             // 
             this.jSONToolStripMenuItem1.Name = "jSONToolStripMenuItem1";
-            this.jSONToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.jSONToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.jSONToolStripMenuItem1.Text = "JSON";
             this.jSONToolStripMenuItem1.Click += new System.EventHandler(this.JSONToolStripMenuItem1_Click);
             // 
@@ -454,7 +460,7 @@
             this.xmlUrl,
             this.xmlDosya});
             this.xMLToolStripMenuItem1.Name = "xMLToolStripMenuItem1";
-            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.xMLToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.xMLToolStripMenuItem1.Text = "XML";
             // 
             // xmlUrl
@@ -470,6 +476,14 @@
             this.xmlDosya.Size = new System.Drawing.Size(106, 22);
             this.xmlDosya.Text = "Dosya";
             this.xmlDosya.Click += new System.EventHandler(this.XmlDosya_Click);
+            // 
+            // konsolToolStripMenuItem
+            // 
+            this.konsolToolStripMenuItem.Enabled = false;
+            this.konsolToolStripMenuItem.Name = "konsolToolStripMenuItem";
+            this.konsolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.konsolToolStripMenuItem.Text = "SQL Query Konsolu";
+            this.konsolToolStripMenuItem.Click += new System.EventHandler(this.KonsolToolStripMenuItem_Click);
             // 
             // yardımToolStripMenuItem
             // 
@@ -578,10 +592,6 @@
             this.yenileButon.UseVisualStyleBackColor = true;
             this.yenileButon.Click += new System.EventHandler(this.YenileButon_Click);
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,6 +688,7 @@
         private System.Windows.Forms.ToolStripMenuItem xmlUrl;
         private System.Windows.Forms.ToolStripMenuItem xmlDosya;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ToolStripMenuItem konsolToolStripMenuItem;
     }
 }
 

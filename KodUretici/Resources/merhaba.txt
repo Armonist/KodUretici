@@ -28,5 +28,5 @@ public class @var1
 
 // MsSql, Json, Xml, Nullable?, PK belirtmesi
 
-// Kod Uretici v1.4.4
+// Kod Uretici v1.4.5
 // Anil Canberk DURAN
