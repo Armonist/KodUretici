@@ -46,4 +46,3 @@ C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.csproj
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.exe
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.pdb
 C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.urlForm.resources
-C:\Users\Armonist\source\repos\KodUretici\KodUretici\obj\Debug\KodUretici.konsolForm.resources

@@ -331,7 +331,6 @@ namespace KodUretici
                 yazi2.Show();
                 tabloComboBox.Show();
                 tabloEkleButton.Show();
-                konsolToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -402,7 +401,7 @@ namespace KodUretici
                         tip = "decimal";
                     if (tabloComboBox.SelectedIndex < ayiriciIndex && item.ItemArray[2].Equals("YES"))
                         tip += "?";
-                    if (pkTable.Rows.Count > 0 && pkTable.Rows[0].ItemArray[0].Equals(item.ItemArray[0].ToString()))
+                    if (tabloComboBox.SelectedIndex < ayiriciIndex && pkTable.Rows.Count > 0 && pkTable.Rows[0].ItemArray[0].Equals(item.ItemArray[0].ToString()))
                         tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString(), tip, "PK" }));
                     else
                         tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString(), tip }));
@@ -417,7 +416,6 @@ namespace KodUretici
                 yazi2.Hide();
                 tabloComboBox.Hide();
                 tabloEkleButton.Hide();
-                konsolToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -577,43 +575,6 @@ namespace KodUretici
             foreach (XElement degisken in element.Elements())
             {
                 tekrarListView.Items.Add(new ListViewItem(new string[] { degisken.Name.ToString(), "string" }));
-            }
-        }
-
-        public static string konsolQuery = "";
-        private void KonsolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            konsolForm kon = new konsolForm();
-            kon.veritabani(dbComboBox.Text);
-            kon.ShowDialog();
-
-            if (konsolQuery != "")
-            {
-                dataTable = new DataTable();
-                SqlCommand cmd = new SqlCommand(konsolQuery, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                con.Open();
-                try
-                {
-                    da.Fill(dataTable);
-                }
-                catch
-                {
-                    MessageBox.Show("Query istenilen biçimde değil", "Hata!");
-                }
-                con.Close();
-
-                da.Dispose();
-
-                tekrarListView.Items.Clear();
-                foreach (DataRow item in dataTable.Rows)
-                {
-                    if (item.ItemArray.Length == 1)
-                        tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString() }));
-                    else
-                        tekrarListView.Items.Add(new ListViewItem(new string[] { item.ItemArray[0].ToString(), item.ItemArray[1].ToString() }));
-                }
-                konsolQuery = "";
             }
         }
 

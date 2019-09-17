@@ -70,7 +70,6 @@
             this.xMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.xmlUrl = new System.Windows.Forms.ToolStripMenuItem();
             this.xmlDosya = new System.Windows.Forms.ToolStripMenuItem();
-            this.konsolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yazi1 = new System.Windows.Forms.Label();
@@ -422,8 +421,7 @@
             this.mySQLBaToolStripMenuItem,
             this.toolStripSeparator3,
             this.jSONToolStripMenuItem1,
-            this.xMLToolStripMenuItem1,
-            this.konsolToolStripMenuItem});
+            this.xMLToolStripMenuItem1});
             this.sQLBağlantısıToolStripMenuItem.Name = "sQLBağlantısıToolStripMenuItem";
             this.sQLBağlantısıToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.sQLBağlantısıToolStripMenuItem.Text = "Bağlantı";
@@ -476,14 +474,6 @@
             this.xmlDosya.Size = new System.Drawing.Size(106, 22);
             this.xmlDosya.Text = "Dosya";
             this.xmlDosya.Click += new System.EventHandler(this.XmlDosya_Click);
-            // 
-            // konsolToolStripMenuItem
-            // 
-            this.konsolToolStripMenuItem.Enabled = false;
-            this.konsolToolStripMenuItem.Name = "konsolToolStripMenuItem";
-            this.konsolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.konsolToolStripMenuItem.Text = "SQL Query Konsolu";
-            this.konsolToolStripMenuItem.Click += new System.EventHandler(this.KonsolToolStripMenuItem_Click);
             // 
             // yardımToolStripMenuItem
             // 
@@ -688,7 +678,6 @@
         private System.Windows.Forms.ToolStripMenuItem xmlUrl;
         private System.Windows.Forms.ToolStripMenuItem xmlDosya;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ToolStripMenuItem konsolToolStripMenuItem;
     }
 }
 
